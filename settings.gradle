@@ -1,0 +1,37 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+    versionCatalogs {
+        libs {
+            version('dagger', '2.44.2')
+
+            version('java', JavaVersion.VERSION_11.toString())
+
+            version('kotlin', '1.8.0')
+
+            plugin('kotlin-jvm', 'org.jetbrains.kotlin.jvm')
+                    .versionRef('kotlin')
+
+            plugin('kotlin-kapt', 'org.jetbrains.kotlin.kapt')
+                    .versionRef('kotlin')
+
+            library('dagger', 'com.google.dagger', 'dagger')
+                    .versionRef('dagger')
+
+            library('dagger-compiler', 'com.google.dagger', 'dagger-compiler')
+                    .versionRef('dagger')
+        }
+    }
+}
